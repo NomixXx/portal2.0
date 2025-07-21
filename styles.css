@@ -6,7 +6,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: #f8f9fa;
+    background: #FFCA00;
     color: #333;
 }
 
@@ -165,12 +165,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #f8f9fa;
+    background: #FFCA00;
 }
 
 .header {
-    background: #495057;
-    color: white;
+    background: #F5B915;
+    color: #333;
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -188,7 +188,6 @@ body {
 .header-logo-img {
     height: 40px;
     width: auto;
-    filter: brightness(0) invert(1); /* Делает логотип белым */
 }
 
 .header-user {
@@ -201,26 +200,26 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: white;
+    color: #333;
 }
 
 .user-role {
     font-size: 0.875rem;
-    color: #adb5bd;
+    color: #666;
 }
 
 .header-btn {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
     border: none;
     padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-    color: white;
+    color: #333;
     transition: all 0.2s ease;
 }
 
 .header-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .app-content {
@@ -231,20 +230,20 @@ body {
 /* Menu Styles */
 .main-menu {
     width: 280px;
-    background: white;
-    border-right: 1px solid #dee2e6;
+    background: #F5B915;
+    border-right: 1px solid #E8AF15;
     height: calc(100vh - 80px);
     overflow-y: auto;
 }
 
 .menu-header {
     padding: 1.5rem;
-    border-bottom: 1px solid #dee2e6;
-    background: #f8f9fa;
+    border-bottom: 1px solid #E8AF15;
+    background: #E8AF15;
 }
 
 .menu-header h1 {
-    color: #495057;
+    color: #333;
     font-size: 1.25rem;
     font-weight: 600;
 }
@@ -257,7 +256,7 @@ body {
     width: 100%;
     background: none;
     border: none;
-    color: #495057;
+    color: #333;
     padding: 12px 16px;
     margin-bottom: 4px;
     border-radius: 8px;
@@ -272,11 +271,11 @@ body {
 }
 
 .menu-item:hover {
-    background: #e9ecef;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .menu-item.active {
-    background: #007bff;
+    background: #E8AF15;
     color: white;
 }
 
@@ -291,20 +290,20 @@ body {
 }
 .sub-menu {
     width: 280px;
-    background: #f8f9fa;
-    border-right: 1px solid #dee2e6;
+    background: #E8AF15;
+    border-right: 1px solid #D4A015;
     height: calc(100vh - 80px);
     overflow-y: auto;
 }
 
 .submenu-header {
     padding: 1.5rem;
-    border-bottom: 1px solid #dee2e6;
-    background: white;
+    border-bottom: 1px solid #D4A015;
+    background: #F5B915;
 }
 
 .submenu-header h2 {
-    color: #495057;
+    color: #333;
     font-size: 1.1rem;
     font-weight: 600;
 }
@@ -317,7 +316,7 @@ body {
     width: 100%;
     background: none;
     border: none;
-    color: #6c757d;
+    color: #333;
     padding: 10px 16px;
     margin-bottom: 4px;
     border-radius: 6px;
@@ -331,33 +330,33 @@ body {
 }
 
 .submenu-item:hover {
-    background: white;
-    color: #495057;
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
 }
 
 .submenu-item.active {
-    background: #007bff;
+    background: #D4A015;
     color: white;
 }
 
 /* Content Area */
 .content-area {
     flex: 1;
-    background: white;
+    background: #FFCA00;
     overflow-y: auto;
     padding: 2rem;
 }
 
 .welcome-message {
     text-align: center;
-    color: #6c757d;
+    color: #666;
     margin-top: 4rem;
 }
 
 .welcome-message h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #495057;
+    color: #333;
 }
 
 .content-frame {
@@ -370,21 +369,29 @@ body {
 
 .content-text {
     line-height: 1.6;
-    color: #495057;
+    color: #333;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .content-text h2 {
     margin-bottom: 1rem;
-    color: #212529;
+    color: #333;
 }
 
 .content-image {
     text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .content-image h2 {
     margin-bottom: 1.5rem;
-    color: #212529;
+    color: #333;
 }
 
 .content-img {
@@ -430,7 +437,7 @@ body {
 }
 
 .modal-header {
-    background: #495057;
+    background: #F5B915;
     color: white;
     padding: 1.5rem;
     display: flex;
@@ -467,7 +474,7 @@ body {
 
 .admin-sidebar {
     width: 220px;
-    background: #6c757d;
+    background: #E8AF15;
     padding: 1rem;
 }
 
@@ -485,22 +492,23 @@ body {
     gap: 10px;
     font-weight: 500;
     text-align: left;
-    color: white;
+    color: #333;
 }
 
 .admin-tab-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .admin-tab-btn.active {
-    background: #007bff;
+    background: #D4A015;
+    color: white;
 }
 
 .admin-main {
     flex: 1;
     padding: 2rem;
     overflow-y: auto;
-    background: #f8f9fa;
+    background: #FFCA00;
 }
 
 .section-header {
@@ -513,7 +521,7 @@ body {
 .section-header h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #212529;
+    color: #333;
 }
 
 /* Button Styles */
@@ -531,35 +539,35 @@ body {
 }
 
 .btn-success {
-    background: #28a745;
+    background: #E8AF15;
     color: white;
 }
 
 .btn-success:hover {
-    background: #218838;
+    background: #D4A015;
     transform: translateY(-1px);
 }
 
 .btn-primary {
-    background: #007bff;
+    background: #F5B915;
     color: white;
 }
 
 .btn-primary:hover {
-    background: #0056b3;
+    background: #E8AF15;
 }
 
 .btn-secondary {
-    background: #6c757d;
+    background: #999;
     color: white;
 }
 
 .btn-secondary:hover {
-    background: #545b62;
+    background: #777;
 }
 
 .btn-update {
-    background: #007bff;
+    background: #F5B915;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -573,11 +581,11 @@ body {
 }
 
 .btn-update:hover {
-    background: #0056b3;
+    background: #E8AF15;
 }
 
 .btn-cancel {
-    background: #6c757d;
+    background: #999;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -591,7 +599,7 @@ body {
 }
 
 .btn-cancel:hover {
-    background: #545b62;
+    background: #777;
 }
 
 /* Form Styles */
@@ -606,7 +614,7 @@ body {
 .create-form h4 {
     margin-bottom: 1.5rem;
     font-weight: 600;
-    color: #212529;
+    color: #333;
 }
 
 .form-row {
@@ -628,8 +636,8 @@ body {
 .form-row input:focus,
 .form-row select:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    border-color: #F5B915;
+    box-shadow: 0 0 0 3px rgba(245, 185, 21, 0.1);
 }
 
 .form-actions {
@@ -648,7 +656,7 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
-    color: #495057;
+    color: #333;
 }
 
 /* Table Styles */
@@ -674,9 +682,9 @@ body {
 }
 
 .table th {
-    background: #f8f9fa;
+    background: #F5B915;
     font-weight: 600;
-    color: #495057;
+    color: #333;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -684,7 +692,7 @@ body {
 }
 
 .table tr:hover {
-    background: #f8f9fa;
+    background: rgba(245, 185, 21, 0.1);
 }
 
 .table td {
@@ -741,11 +749,11 @@ body {
 }
 
 .action-btn:hover {
-    background: #f8f9fa;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .action-btn.edit {
-    color: #007bff;
+    color: #F5B915;
 }
 
 .action-btn.delete {
@@ -783,8 +791,8 @@ body {
 }
 
 .password-toggle:hover {
-    background: #f8f9fa;
-    color: #495057;
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
 }
 
 /* Sections Container */
@@ -803,25 +811,25 @@ body {
 
 .section-header-card {
     padding: 1.5rem;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid #E8AF15;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f8f9fa;
+    background: #F5B915;
     min-height: 80px;
 }
 
 .section-info h4 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #212529;
+    color: #333;
     margin-bottom: 6px;
     line-height: 1.3;
 }
 
 .section-info p {
     font-size: 0.9rem;
-    color: #6c757d;
+    color: #666;
     margin: 0;
     line-height: 1.4;
 }
@@ -848,9 +856,9 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 8px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #E8AF15;
     min-height: 60px;
 }
 
@@ -862,7 +870,7 @@ body {
 }
 
 .subsection-icon {
-    color: #6c757d;
+    color: #666;
     font-size: 1.1rem;
     width: 20px;
     text-align: center;
@@ -870,12 +878,12 @@ body {
 
 .subsection-title {
     font-weight: 500;
-    color: #212529;
+    color: #333;
 }
 
 .subsection-type {
     font-size: 0.85rem;
-    color: #6c757d;
+    color: #666;
     margin-left: 8px;
 }
 
@@ -893,11 +901,11 @@ body {
 
 .modal-footer {
     padding: 1.5rem;
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #E8AF15;
     display: flex;
     justify-content: flex-end;
     gap: 12px;
-    background: #f8f9fa;
+    background: #F5B915;
 }
 
 /* Enhanced Subsection Modal Styles */
@@ -913,7 +921,7 @@ body {
     display: block;
     margin-bottom: 0.75rem;
     font-weight: 600;
-    color: #495057;
+    color: #333;
     font-size: 0.9rem;
 }
 
@@ -933,8 +941,8 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    border-color: #F5B915;
+    box-shadow: 0 0 0 3px rgba(245, 185, 21, 0.1);
 }
 
 .form-group textarea {
@@ -952,15 +960,15 @@ body {
     display: block;
     margin-top: 0.5rem;
     font-size: 0.8rem;
-    color: #6c757d;
+    color: #666;
     font-style: italic;
 }
 
 .content-fields {
     padding: 1.5rem;
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 12px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #E8AF15;
     margin-bottom: 1.5rem;
 }
 
@@ -975,7 +983,7 @@ body {
 }
 
 .file-input:hover {
-    border-color: #007bff !important;
+    border-color: #F5B915 !important;
 }
 
 /* Responsive Design */
@@ -1020,14 +1028,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #dee2e6;
+    background: #E8AF15;
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #adb5bd;
+    background: #D4A015;
 }
