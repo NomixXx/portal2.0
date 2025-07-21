@@ -17,7 +17,7 @@ body {
 /* Login Styles - Желтый дизайн как на скриншоте */
 .login-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffd700, #ffb347);
+    background: linear-gradient(135deg, #ffd700 0%, #ffb347 50%, #ff8c00 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,9 +59,9 @@ body {
 
 /* ЗАМЕНИТЕ ЛОГОТИП ЗДЕСЬ: Измените размеры и стили для вашего логотипа */
 .logo-img {
-    height: 80px;
+    height: 120px;
     width: auto;
-    max-width: 200px;
+    max-width: 300px;
 }
 
 .login-header h2 {
@@ -73,13 +73,6 @@ body {
 
 .form-group {
     margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #555;
 }
 
 .form-group input {
@@ -133,16 +126,38 @@ body {
     box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
 }
 
+.remember-me {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    cursor: pointer;
+}
+
 .login-info {
     text-align: center;
     padding-top: 1.5rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 0.875rem;
     color: #666;
+    margin-bottom: 1.5rem;
 }
 
 .login-info p {
     margin-bottom: 0.5rem;
+}
+
+.login-footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
 }
 
 /* Main App Styles - Серо-синий дизайн как на скриншоте */
@@ -174,18 +189,6 @@ body {
     height: 40px;
     width: auto;
     filter: brightness(0) invert(1); /* Делает логотип белым */
-}
-
-.logo-up {
-    color: #ffd700;
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.logo-taxi {
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
 }
 
 .header-user {
@@ -455,7 +458,7 @@ body {
     padding: 1rem;
 }
 
-.admin-tab {
+.admin-tab-btn {
     width: 100%;
     background: none;
     border: none;
@@ -472,11 +475,11 @@ body {
     color: white;
 }
 
-.admin-tab:hover {
+.admin-tab-btn:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-.admin-tab.active {
+.admin-tab-btn.active {
     background: #007bff;
 }
 
@@ -923,18 +926,6 @@ body {
 
 .file-input:hover {
     border-color: #007bff !important;
-}
-
-/* Animations */
-@keyframes slideIn {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
 }
 
 /* Responsive Design */

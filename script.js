@@ -84,6 +84,7 @@ let appState = {
     activeSubsection: null,
     isAdminPanelOpen: false,
     editingUser: null,
+    editingSection: null,
     editingSubsection: null
 };
 
@@ -338,6 +339,14 @@ function renderContent() {
                 </div>
             `;
             break;
+        case 'image':
+            content = `
+                <div class="content-image">
+                    <h2>${activeSubsection.title}</h2>
+                    <img src="${activeSubsection.imageUrl}" alt="${activeSubsection.title}" class="content-img">
+                </div>
+            `;
+            break;
     }
     
     contentArea.innerHTML = content;
@@ -439,11 +448,11 @@ function renderUsersTable() {
         <table class="table">
             <thead>
                 <tr>
-                    <th>Пользователь</th>
-                    <th>Пароль</th>
-                    <th>Роль</th>
-                    <th>Дата создания</th>
-                    <th>Действия</th>
+                    <th>ПОЛЬЗОВАТЕЛЬ</th>
+                    <th>ПАРОЛЬ</th>
+                    <th>РОЛЬ</th>
+                    <th>ДАТА СОЗДАНИЯ</th>
+                    <th>ДЕЙСТВИЯ</th>
                 </tr>
             </thead>
             <tbody>
@@ -505,6 +514,19 @@ function deleteUser(userId) {
     }
 }
 
+function togglePassword(userId, password) {
+    const passwordDisplay = document.getElementById(`password-${userId}`);
+    const eyeIcon = document.getElementById(`eye-${userId}`);
+    
+    if (passwordDisplay.textContent === '••••••••') {
+        passwordDisplay.textContent = password;
+        eyeIcon.className = 'fas fa-eye-slash';
+    } else {
+        passwordDisplay.textContent = '••••••••';
+        eyeIcon.className = 'fas fa-eye';
+    }
+}
+
 // Menu Management
 function showCreateSectionForm() {
     document.getElementById('createSectionForm').classList.remove('hidden');
@@ -558,34 +580,6 @@ function saveSection() {
     renderMenu();
 }
 
-function editSection(sectionId) {
-    const section = appState.menuSections.find(s => s.id === sectionId);
-    if (section) {
-        appState.editingSection = sectionId;
-        document.getElementById('newSectionTitle').value = section.title;
-        
-        // Reset checkboxes
-        document.querySelectorAll('#createSectionForm input[type="checkbox"]').forEach(cb => {
-            cb.checked = section.allowedRoles.includes(cb.value);
-        });
-        
-        document.getElementById('saveSectionBtn').innerHTML = '<i class="fas fa-save"></i> Обновить';
-        showCreateSectionForm();
-    }
-}
-
-function togglePassword(userId, password) {
-    const passwordDisplay = document.getElementById(`password-${userId}`);
-    const eyeIcon = document.getElementById(`eye-${userId}`);
-    
-    if (passwordDisplay.textContent === '••••••••') {
-        passwordDisplay.textContent = password;
-        eyeIcon.className = 'fas fa-eye-slash';
-    } else {
-        passwordDisplay.textContent = '••••••••';
-        eyeIcon.className = 'fas fa-eye';
-    }
-}
 function renderMenuManagement() {
     const sectionsContainer = document.getElementById('sectionsContainer');
     sectionsContainer.innerHTML = '';
@@ -639,15 +633,6 @@ function renderMenuManagement() {
     });
 }
 
-function deleteSection(sectionId) {
-    if (confirm('Вы уверены, что хотите удалить этот раздел?')) {
-        appState.menuSections = appState.menuSections.filter(s => s.id !== sectionId);
-        saveToLocalStorage();
-        renderMenuManagement();
-        renderMenu();
-    }
-}
-
 function editSection(sectionId) {
     const section = appState.menuSections.find(s => s.id === sectionId);
     if (section) {
@@ -661,6 +646,15 @@ function editSection(sectionId) {
         
         document.getElementById('saveSectionBtn').innerHTML = '<i class="fas fa-save"></i> Обновить';
         showCreateSectionForm();
+    }
+}
+
+function deleteSection(sectionId) {
+    if (confirm('Вы уверены, что хотите удалить этот раздел?')) {
+        appState.menuSections = appState.menuSections.filter(s => s.id !== sectionId);
+        saveToLocalStorage();
+        renderMenuManagement();
+        renderMenu();
     }
 }
 
@@ -704,6 +698,7 @@ function clearSubsectionForm() {
     document.getElementById('embedWidth').value = '100%';
     document.getElementById('embedHeight').value = '600px';
     document.getElementById('subsectionUrl').value = '';
+    document.getElementById('imageUrl').value = '';
     handleSubsectionTypeChange();
 }
 
@@ -715,6 +710,7 @@ function fillSubsectionForm(subsection) {
     document.getElementById('embedWidth').value = subsection.embedWidth || '100%';
     document.getElementById('embedHeight').value = subsection.embedHeight || '600px';
     document.getElementById('subsectionUrl').value = subsection.url || '';
+    document.getElementById('imageUrl').value = subsection.imageUrl || '';
     handleSubsectionTypeChange();
 }
 
@@ -724,6 +720,7 @@ function handleSubsectionTypeChange() {
     document.getElementById('contentFields').classList.toggle('hidden', type !== 'content');
     document.getElementById('googleDocFields').classList.toggle('hidden', type !== 'google-doc');
     document.getElementById('linkFields').classList.toggle('hidden', type !== 'link');
+    document.getElementById('imageFields').classList.toggle('hidden', type !== 'image');
 }
 
 function saveSubsection() {
@@ -765,7 +762,7 @@ function saveSubsection() {
         subsectionData.url = url;
     } else if (type === 'image') {
         if (!imageUrl) {
-            alert('Введите URL изображения');
+            alert('Введите URL изображения или загрузите файл');
             return;
         }
         subsectionData.imageUrl = imageUrl;
@@ -829,7 +826,8 @@ function getTypeIcon(type) {
     const icons = {
         'google-doc': 'fas fa-file-alt',
         'link': 'fas fa-link',
-        'content': 'fas fa-globe'
+        'content': 'fas fa-globe',
+        'image': 'fas fa-image'
     };
     return icons[type] || 'fas fa-globe';
 }
@@ -838,7 +836,8 @@ function getTypeDisplayName(type) {
     const typeNames = {
         'google-doc': 'Google документ',
         'link': 'Ссылка',
-        'content': 'Контент'
+        'content': 'Контент',
+        'image': 'Изображение'
     };
     return typeNames[type] || type;
 }
