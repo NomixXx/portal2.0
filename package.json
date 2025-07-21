@@ -1,0 +1,16 @@
+{
+  "name": "uptaxi-admin-system",
+  "version": "1.0.0",
+  "description": "UP TAXI Admin System - Pure HTML/CSS/JS",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server . -p 3000 -o",
+    "start": "npx http-server . -p 3000"
+  },
+  "keywords": ["html", "css", "javascript", "admin", "taxi"],
+  "author": "UP TAXI",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
