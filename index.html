@@ -10,36 +10,33 @@
 <body>
     <!-- Login Form -->
     <div id="loginForm" class="login-container">
-        <!-- ЗАМЕНИТЕ ЭТОТ ЛОГОТИП: Замените текст на ваш логотип или изображение -->
+        <!-- ЗАМЕНИТЕ ЭТОТ ЛОГОТИП: Замените на ваш логотип -->
         <div class="login-logo">
             <div class="logo-text">
-                <span class="portal-text">ПОРТАЛ</span>
-                <span class="uptaxi-text">UP<i class="fas fa-car"></i>TAXI<i class="fas fa-user"></i></span>
+                ПОРТАЛ <span class="up-text">UP</span><i class="fas fa-car logo-icon"></i><span class="taxi-text">TAXI</span><i class="fas fa-user logo-icon"></i>
             </div>
         </div>
         
-        <div class="login-form-container">
-            <h1 class="login-title">Вход</h1>
-            
-            <form id="loginFormElement">
-                <div class="form-group">
-                    <input type="text" id="username" placeholder="Логин" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" placeholder="Пароль" required>
-                </div>
-                <div id="loginError" class="error-message"></div>
-                <button type="submit" class="login-btn">
-                    Войти
-                </button>
-                <div class="remember-me">
-                    <label>
-                        <input type="checkbox" id="rememberMe">
-                        <span>Запомнить меня</span>
-                    </label>
-                </div>
-            </form>
-        </div>
+        <h1 class="login-title">Вход</h1>
+        
+        <form id="loginFormElement" class="login-form">
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Логин" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Пароль" required>
+            </div>
+            <div id="loginError" class="error-message"></div>
+            <button type="submit" class="login-btn">
+                Войти
+            </button>
+            <div class="remember-me">
+                <label>
+                    <input type="checkbox" id="rememberMe">
+                    <span>Запомнить меня</span>
+                </label>
+            </div>
+        </form>
         
         <div class="login-footer">
             <p>© 2025 UpTaxi. Все права защищены.</p>
