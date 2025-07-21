@@ -24,11 +24,13 @@ body {
     justify-content: center;
     padding: 20px;
     position: relative;
+    position: relative;
 }
 
 .login-logo {
     position: absolute;
     top: 15%;
+    text-align: center;
     text-align: center;
 }
 
