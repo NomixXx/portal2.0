@@ -10,14 +10,17 @@
 <body>
     <!-- Login Form -->
     <div id="loginForm" class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <div class="logo-container">
-                    <!-- ЗАМЕНИТЕ ЭТОТ ЛОГОТИП: Замените src="assets/logo-uptaxi.svg" на путь к вашему логотипу -->
-                    <img src="assets/logo-uptaxi.svg" alt="UP TAXI" class="logo-img">
-                </div>
-                <h2>Вход</h2>
+        <!-- ЗАМЕНИТЕ ЭТОТ ЛОГОТИП: Замените текст на ваш логотип или изображение -->
+        <div class="login-logo">
+            <div class="logo-text">
+                <span class="portal-text">ПОРТАЛ</span>
+                <span class="uptaxi-text">UP<i class="fas fa-car"></i>TAXI<i class="fas fa-user"></i></span>
             </div>
+        </div>
+        
+        <div class="login-form-container">
+            <h1 class="login-title">Вход</h1>
+            
             <form id="loginFormElement">
                 <div class="form-group">
                     <input type="text" id="username" placeholder="Логин" required>
@@ -36,14 +39,10 @@
                     </label>
                 </div>
             </form>
-            <div class="login-info">
-                <p>Для тестирования:</p>
-                <p><strong>admin</strong> / admin123 (администратор)</p>
-                <p><strong>moderator</strong> / admin123 (модератор)</p>
-            </div>
-            <div class="login-footer">
-                <p>© 2025 UpTaxi. Все права защищены.</p>
-            </div>
+        </div>
+        
+        <div class="login-footer">
+            <p>© 2025 UpTaxi. Все права защищены.</p>
         </div>
     </div>
 

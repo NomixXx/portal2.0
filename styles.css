@@ -14,150 +14,152 @@ body {
     display: none !important;
 }
 
-/* Login Styles - Желтый дизайн как на скриншоте */
+/* Login Styles - Точно по шаблону */
 .login-container {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffd700 0%, #ffb347 50%, #ff8c00 100%);
+    background: #FFCA00;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    position: relative;
-}
-
-.login-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-}
-
-.login-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 3rem 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 420px;
-    position: relative;
-    z-index: 1;
-}
-
-.login-header {
     text-align: center;
-    margin-bottom: 2.5rem;
 }
 
-.logo-container {
-    margin-bottom: 1.5rem;
+.login-logo {
+    margin-bottom: 80px;
 }
 
-/* ЗАМЕНИТЕ ЛОГОТИП ЗДЕСЬ: Измените размеры и стили для вашего логотипа */
-.logo-img {
-    height: 120px;
-    width: auto;
-    max-width: 300px;
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
 
-.login-header h2 {
-    color: #666;
-    font-size: 2rem;
+.portal-text {
+    font-size: 18px;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.uptaxi-text {
+    font-size: 32px;
+    font-weight: 800;
+    color: #333;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.uptaxi-text i {
+    font-size: 28px;
+    color: #333;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 60px;
+}
+
+.login-title {
+    font-size: 48px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 20px;
 }
 
 .form-group input {
     width: 100%;
-    padding: 15px 20px;
-    border: 2px solid transparent;
-    border-radius: 12px;
-    font-size: 1rem;
-    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 16px;
+    border: 2px solid #E8AF15;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease;
     color: #333;
+    box-sizing: border-box;
 }
 
 .form-group input::placeholder {
-    color: #999;
+    color: #666;
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #ffd700;
+    border-color: #F5B915;
     background: white;
-    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 0 2px rgba(245, 185, 21, 0.2);
 }
 
 .error-message {
     color: #dc3545;
-    font-size: 0.875rem;
+    font-size: 14px;
     text-align: center;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
+    margin-bottom: 15px;
+    padding: 8px;
     background: rgba(220, 53, 69, 0.1);
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .login-btn {
     width: 100%;
-    background: linear-gradient(135deg, #ff8c00, #ff6b35);
-    color: white;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
     border: none;
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
+    border: 2px solid #E8AF15;
 }
 
 .login-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
+    background: white;
+    border-color: #F5B915;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .remember-me {
-    text-align: center;
-    margin-bottom: 1.5rem;
+    text-align: left;
+    margin-bottom: 0;
 }
 
 .remember-me label {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 14px;
+    color: #333;
     cursor: pointer;
 }
 
-.login-info {
-    text-align: center;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 0.875rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-}
-
-.login-info p {
-    margin-bottom: 0.5rem;
+.remember-me input[type="checkbox"] {
+    width: auto;
+    margin: 0;
 }
 
 .login-footer {
-    text-align: center;
-    font-size: 0.8rem;
-    color: #999;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #333;
+    opacity: 0.8;
 }
 
 /* Main App Styles - Серо-синий дизайн как на скриншоте */
