@@ -268,6 +268,7 @@ body {
     justify-content: space-between;
     font-weight: 500;
     text-align: left;
+    min-height: 48px;
 }
 
 .menu-item:hover {
@@ -279,6 +280,15 @@ body {
     color: white;
 }
 
+.menu-item span {
+    flex: 1;
+    text-align: left;
+}
+
+.menu-item i {
+    margin-left: auto;
+    opacity: 0.7;
+}
 .sub-menu {
     width: 280px;
     background: #f8f9fa;
@@ -315,6 +325,9 @@ body {
     transition: all 0.2s ease;
     font-weight: 500;
     text-align: left;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
 }
 
 .submenu-item:hover {
@@ -656,6 +669,8 @@ body {
     padding: 16px;
     text-align: left;
     border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+    min-height: 60px;
 }
 
 .table th {
@@ -665,12 +680,16 @@ body {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    height: 50px;
 }
 
 .table tr:hover {
     background: #f8f9fa;
 }
 
+.table td {
+    height: 60px;
+}
 .role-badge {
     padding: 6px 12px;
     border-radius: 20px;
@@ -678,6 +697,9 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
 }
 
 .role-admin {
@@ -698,6 +720,8 @@ body {
 .table-actions {
     display: flex;
     gap: 8px;
+    align-items: center;
+    justify-content: center;
 }
 
 .action-btn {
@@ -708,6 +732,12 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
     font-size: 0.9rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .action-btn:hover {
@@ -726,12 +756,14 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+    min-height: 32px;
 }
 
 .password-display {
     font-family: monospace;
     color: #6c757d;
     font-size: 1rem;
+    min-width: 80px;
 }
 
 .password-toggle {
@@ -742,6 +774,12 @@ body {
     padding: 6px;
     border-radius: 4px;
     transition: all 0.2s ease;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .password-toggle:hover {
@@ -770,6 +808,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: #f8f9fa;
+    min-height: 80px;
 }
 
 .section-info h4 {
@@ -777,16 +816,21 @@ body {
     font-weight: 600;
     color: #212529;
     margin-bottom: 6px;
+    line-height: 1.3;
 }
 
 .section-info p {
     font-size: 0.9rem;
     color: #6c757d;
+    margin: 0;
+    line-height: 1.4;
 }
 
 .section-actions {
     display: flex;
     gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .section-body {
@@ -807,17 +851,21 @@ body {
     background: #f8f9fa;
     border-radius: 8px;
     border: 1px solid #dee2e6;
+    min-height: 60px;
 }
 
 .subsection-info {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex: 1;
 }
 
 .subsection-icon {
     color: #6c757d;
     font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
 }
 
 .subsection-title {
@@ -828,11 +876,13 @@ body {
 .subsection-type {
     font-size: 0.85rem;
     color: #6c757d;
+    margin-left: 8px;
 }
 
 .subsection-actions {
     display: flex;
     gap: 8px;
+    flex-shrink: 0;
 }
 
 /* Modal Body */
